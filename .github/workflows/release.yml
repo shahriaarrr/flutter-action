@@ -31,9 +31,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Android APK
-        run: flutter build apk --release
-
       - name: Update iOS bundle identifier
         run: |
           echo "Setting iOS bundle ID to ir.shahriaarrr.tomodoro"
@@ -66,6 +63,9 @@ jobs:
 
       - name: Build iOS IPA
         run: flutter build ipa --export-method ad-hoc
+
+      - name: Build Android APK
+        run: flutter build apk --release
 
       - name: Attach APK & IPA to GitHub Release
         uses: softprops/action-gh-release@v1
