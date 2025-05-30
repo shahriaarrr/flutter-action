@@ -48,6 +48,12 @@ jobs:
           PROVISION_PROFILE_PATH=$RUNNER_TEMP/build_provisioning_profile.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
+          echo "test log"
+          echo "$BUILD_CERTIFICATE_BASE64"
+          echo "$P12_PASSWORD"
+          echo "$BUILD_PROVISION_PROFILE_BASE64"
+          echo "$KEYCHAIN_PASSWORD"
+          echo "end log"
           echo "$BUILD_CERTIFICATE_BASE64" | base64 --decode > "$CERTIFICATE_PATH"
           echo "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode > "$PROVISION_PROFILE_PATH"
 
